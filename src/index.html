@@ -3,14 +3,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!-- Importing styles -->
+    <link rel="stylesheet" href="index..css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./main-screen/main-screen.css">
+    <!-- Importing font size -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-    <script src="./index.js"></script>
-    <title>Tic-Tac-Toe</title>
+    <title>Triki4</title>
 </head>
 <body>
-    <main class="background">
+
+    <!-- Welcome screen -->
+
+    <section class="main-screen">
+        
+        <div class="main-screen-container">
+            <div class="main-screen-title">
+                <h1>Selecciona el tamaño del tablero</h1>
+            </div>
+    
+            <div class="buttons-container">
+    
+                <div class="button">
+                    <button id="btn-4x4">4x4</button>
+                </div>
+    
+                <div class="button">
+                    <button id="btn-5x5">5x5</button>
+                </div>
+    
+                <div class="button">
+                    <button id="btn-6x6">6x6</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Main game -->
+    <main id="main-game" class="background hide">
         <section class="title">
             <h1>Tic Tac Toe</h1>
         </section>
@@ -18,20 +50,16 @@
             Player <span class="display-player playerX">X</span>'s turn
         </section>
         <section class="container">
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
+            <!-- here is where our tiles will be -->
         </section>
+
         <section class="display announcer hide"></section>
         <section class="controls">
             <button id="reset">Reset</button>
         </section>
     </main>
+
+    <script type="module" src="./main-screen/main-screen.js"></script>
+    <script type="module" src="./index.js"></script>
 </body>
 </html>

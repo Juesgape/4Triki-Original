@@ -1,20 +1,13 @@
-* {
-    padding: 0;
-    margin: 0;
-    font-family: 'Itim', cursive;
-}
-
 .background {
     background-color: #12181B;
     height: 100vh;
-    padding-top: 1px;
+    padding-top: 2rem;
 }
 
 .title {
     color: white;
     text-align: center;
     font-size: 40px;
-    margin-top: 10%;
 }
 
 .display {
@@ -32,20 +25,22 @@
 .container {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 33% 33% 33%;
+    /* THIS IS SET IN THE INDEX.JS FILE */
+    /* grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%; */
     max-width: 300px;
+    max-height: 300px;
 
 }
 
 .tile {
     border: 1px solid white;
-    min-width: 100px;
-    min-height: 100px;
+    min-width: 30px;
+    min-height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 30px;
     cursor: pointer;
 }
 
