@@ -1,0 +1,14 @@
+.main-screen-container {
+    align-items: center;
+    height: 100vh;
+}
+.main-screen-title {
+    text-align: center;
+
+}
+.buttons-container {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
