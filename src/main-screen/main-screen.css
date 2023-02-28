@@ -6,10 +6,6 @@
     text-align: center;
 }
 
-.main-screen-title h1 {
-    color: blue;
-}
-
 .buttons-container {
     padding-top: 2rem;
     display: flex;
