@@ -109,15 +109,16 @@
 .back{
     display: flex;
     position: absolute;
-    
 
 }
 .back button{
     border-radius: 10px;
     border-radius: 20px;
     font-size: 10px;
-    background-color: #ef476f;
+    background-color: #0EFFF8;
     cursor: pointer;
+    height: 70px;
+    width: 70px;
 }
 
 @media(max-width:1340px){
@@ -129,7 +130,7 @@
    
     .back{
         justify-content: right;
-        margin-top: 40px;
+        margin-top: 10px;
         margin-right: 50px;
         position: relative;
     }
