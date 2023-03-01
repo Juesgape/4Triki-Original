@@ -25,7 +25,7 @@
     border-radius: 30px;
     width: 70px;
     height: 80px;
-    background-image: url(/src/main-screen-img/galaxy.jpg);
+    background-image: url(../main-screen-img/galaxy.jpg);
     color: white;
     border-color: white;
     box-shadow: 2px 4px #5e548e;
