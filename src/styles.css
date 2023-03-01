@@ -1,9 +1,17 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Itim', cursive;
+    font-family: 'Press Start 2P', cursive;
 }
 html {
     font-size: 62.3%;
-    /* overflow-y: hidden; */
+    overflow-y: hidden; 
+}
+
+@media(max-width:760px){
+
+    
+html{
+    overflow-y: scroll;
+}
 }
