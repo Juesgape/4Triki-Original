@@ -1,6 +1,20 @@
+#main-game{
+    padding-top: 30px;
+    display:column;
+}
+
+#main-game .display{
+    margin-top: 40px;
+
+}
+
+#main-game .container{
+    justify-content: center;
+}
+
 .background {
     background-color: #12181B;
-    height: 100vh;
+    height: 140vh;
     padding-top: 2rem;
 }
 
@@ -8,6 +22,7 @@
     color: white;
     text-align: center;
     font-size: 40px;
+
 }
 
 .display {
@@ -30,7 +45,6 @@
     grid-template-rows: 33% 33% 33%; */
     max-width: 300px;
     max-height: 300px;
-
 }
 
 .tile {
@@ -46,34 +60,78 @@
 
 .playerX {
     color: #09C372;
+    text-align: center;
 }
 
 .playerO {
     color: #498AFB;
+    text-align: center;
 }
 
 .controls {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1em;
+    position: absolute;
+    margin-left: 280px;
+    margin-top: 250px;
 }
 
 .controls button {
     color: white;
     padding: 8px;
-    border-radius: 8px;
     border: none;
     font-size: 20px;
-    margin-left: 1em;
+    margin-left: 5em;
+    cursor: pointer;
+    height: 70px;
+    width: 70px;
+    font-size: 12px;    
+    background-color: #ef476f;
+    border-radius: 20px;
+
+    --s: 70px;   /* the size of the image */
+    --b: 3px;     /* the border thickness*/
+    --g: 4px;    /* the gap */
+    --c: #ff8fab; /* the color */
+  
+    width: var(--s);
+    aspect-ratio: 1;
+    outline: calc(var(--s)/2) solid #0009;
+    outline-offset: calc(var(--s)/-2);
+    cursor: pointer;
+    transition: 0.3s;
+    
+}
+
+.controls button:hover{
+    outline: var(--b) solid var(--c);
+    outline-offset: var(--g);
+  }
+
+.back{
+    display: flex;
+    position: absolute;
+    
+
+}
+.back button{
+    border-radius: 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    background-color: #ef476f;
     cursor: pointer;
 }
 
-.restart {
-    background-color: #498AFB;
-}
+@media(max-width:1340px){
 
-#reset {
-    background-color: #FF3860;
+    .controls {
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+   
+    .back{
+        justify-content: right;
+        margin-top: 40px;
+        margin-right: 50px;
+        position: relative;
+    }
+    
 }
