@@ -21,7 +21,7 @@
 .title {
     color: white;
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
 
 }
 
@@ -43,14 +43,18 @@
     /* THIS IS SET IN THE INDEX.JS FILE */
     /* grid-template-columns: 33% 33% 33%;
     grid-template-rows: 33% 33% 33%; */
-    max-width: 300px;
-    max-height: 300px;
+
+    /* 300px default */
+    width: 200px;
+    max-height: 200px;
 }
 
 .tile {
     border: 1px solid white;
-    min-width: 30px;
-    min-height: 70px;
+    /* min width 30px default */
+    /* min height 70px default*/
+    min-width: 10px;
+    min-height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,6 +140,20 @@
 .back button:hover{
     outline: var(--b) solid var(--c);
     outline-offset: var(--g);
+}
+
+@media(min-width:700px){
+    .container {
+        width: 300px;
+        max-height: 300px;
+    }
+    .tile {
+        min-width: 30px;
+        min-height: 70px;
+    }
+    .title { 
+        font-size: 40px;
+    }
 }
 
 @media(max-width:1340px){
