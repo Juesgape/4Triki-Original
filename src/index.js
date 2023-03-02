@@ -17,7 +17,7 @@ function populateBoard(size) {
         //modifying styles fot the tiles
         let tileSize = ''
         for(let i = 0; i < size; i++) {
-            tileSize += '33% '
+            tileSize += '30% '
         }
 
         //setting styles for the tile
