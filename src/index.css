@@ -109,7 +109,7 @@
 .back{
     display: flex;
     position: absolute;
-
+    margin-left: 2rem;
 }
 .back button{
     border-radius: 10px;
@@ -118,7 +118,24 @@
     background-color: #0EFFF8;
     cursor: pointer;
     height: 70px;
-    width: 70px;
+    width: 90px;
+    
+    --s: 70px;   /* the size of the image */
+    --b: 3px;     /* the border thickness*/
+    --g: 4px;    /* the gap */
+    --c: #0EFFF8; /* the color */
+  
+    width: var(--s);
+    aspect-ratio: 1;
+    outline: calc(var(--s)/2) solid #0009;
+    outline-offset: calc(var(--s)/-2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back button:hover{
+    outline: var(--b) solid var(--c);
+    outline-offset: var(--g);
 }
 
 @media(max-width:1340px){
@@ -126,8 +143,9 @@
     .controls {
         margin-top: 10px;
         margin-left: 0px;
+        z-index: 1;
     }
-   
+    
     .back{
         justify-content: right;
         margin-top: 10px;
@@ -135,4 +153,8 @@
         position: relative;
     }
     
+    .back button{
+        height: 70px;
+        width: 70px;
+    }
 }

@@ -11,7 +11,7 @@
 }
 
 .main-screen-title h1 {
-    padding-top: 280px;
+    padding-top: 30px;
     color: white;
 }
 .buttons-container {
@@ -19,6 +19,20 @@
     display: flex;
     justify-content: center;
     gap: 4rem;
+}
+
+.tictactoe-image{
+    width: 100%;
+    height: 100px;
+    padding-top: 130px;
+    display: grid;
+    place-items: center;
+}
+
+.tictactoe-image img{
+    width: 100px;
+    height: 100%;
+    
 }
 
 .buttons-container button{
@@ -30,7 +44,7 @@
     border-color: white;
     box-shadow: 2px 4px #5e548e;
     
-    --s: 100px;   /* the size of the image */
+    --s: 70px;   /* the size of the image */
     --b: 4px;     /* the border thickness*/
     --g: 8px;    /* the gap */
     --c: #9f86c0; /* the color */
@@ -52,6 +66,15 @@
 
 #btn-4x4{
     box-shadow: 2px 4px#5e548e;
+}
+
+.social-media-button{
+    
+    width: 100%;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    bottom: 20px;
 }
 
 @media(min-width:1080px){
