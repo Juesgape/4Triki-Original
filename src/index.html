@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Triki X</title>
 </head>
 <body>
@@ -45,7 +46,21 @@
                 </div>
             </div>
             <div class="social-media-button">
-                <button onclick="">Creators</button>
+                <div class="tooltip">
+                <div class= "information-by-label">
+                    <a href="#" id="facebook-opener" onclick="
+                    window.open('https://web.facebook.com/DarkEnesito/?_rdc=2&_rdr');
+                    window.open('https://web.facebook.com/profile.php?id=100075069035273');
+                    window.open('https://web.facebook.com/pholcasta');" 
+                    class="fa fa-facebook media-button"></a>
+                    <a href="#" id ="twitter-opener" onclick="openMultipleFacebookLinks(twitterLinks)" class="fa fa-twitter media-button"></a>
+                    <a href="#" id= "instagram-opener" onclick="openMultipleFacebookLinks(instagramLinks)" class="fa fa-instagram media-button"></a>
+                </div>
+                <div class="creators-label-box">
+                    <label>Creators</label>
+                </div>
+                </div>
+                
             </div>
         </div>
 
