@@ -156,14 +156,34 @@ function runGame(boardSize) {
         }
 
 }
-
+    let playerX_points=0;
+    let playerO_points=0;
+    let last_winner="";
+    console.log("Player O points:"+playerO_points);
+    console.log("Player X points:"+playerX_points);
     const announce = (type) => {
         switch(type){
             case PLAYERO_WON:
                 announcer.innerHTML = 'Player <span class="playerO">O</span> Won';
+                if (last_winner!="O"){
+                playerO_points+=1;
+                last_winner="O"}
+                else{
+                    playerO_points*=2
+                    last_winner=""
+                }
+                console.log("Player O points:"+playerO_points);
                 break;
             case PLAYERX_WON:
                 announcer.innerHTML = 'Player <span class="playerX">X</span> Won';
+                if (last_winner!="X"){
+                    playerX_points+=1;
+                    last_winner="X"}
+                    else{
+                        playerX_points*=3
+                        last_winner=""
+                    }
+                console.log("Player X points:"+playerX_points);
                 break;
             case TIE:
                 announcer.innerText = 'Tie';
