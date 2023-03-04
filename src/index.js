@@ -15,11 +15,58 @@ function setCurrentBoard(newValue) {
 
 function setWinningConditions(conditions) {
     winningConditions = conditions
-    console.log(winningConditions);
 }
 
 function setTotalPosibilities(value) {
     totalPosibilities = value
+}
+
+//Check for tie and returns a truthy value
+function checkForTie(a, b, c, d) {
+    if(a !== '') {
+        if(b !== '' && b !== a) {
+            return true
+        }
+        if(c !== '' && c !== a) {
+            return true
+        }
+        if(d !== '' && d !== a) {
+            return true
+        }
+    }
+    if(b !== '') {
+        if(a !== '' && a !== b) {
+            return true
+        }
+        if(c !== '' && c !== b) {
+            return true
+        }
+        if(d !== '' && d !== b) {
+            return true
+        }
+    }
+    if(c !== '') {
+        if(a !== '' && a !== c) {
+            return true
+        }
+        if(b !== '' && b !== c) {
+            return true
+        }
+        if(d !== '' && d !== c) {
+            return true
+        }
+    }
+    if(d !== '') {
+        if(a !== '' && a !== d) {
+            return true
+        }
+        if(b !== '' && b !== d) {
+            return true
+        }
+        if(c !== '' && c !== d) {
+            return true
+        }
+    }
 }
 
 //function to populate the board with the user's input
@@ -63,29 +110,40 @@ function runGame(boardSize) {
     const PLAYERO_WON = 'PLAYERO_WON';
     const TIE = 'TIE';
 
-    /*
-        Indexes within the board
-        [0] [1] [2]
-        [3] [4] [5]
-        [6] [7] [8]
-    */
 
     //determine the conditions to win taking into consideration the boardSize
     setWinningPosibilities()
     
-    function handleResultValidation(size) {
+    function handleResultValidation() {
         let roundWon = false;
         for (let i = 0; i < totalPosibilities; i++) {
-            console.log(winningConditions);
             const winCondition = winningConditions[i];
             const a = board[winCondition[0]];
             const b = board[winCondition[1]];
             const c = board[winCondition[2]];
             const d = board[winCondition[3]];
+
+            //checking for a tie
+            if(checkForTie(a, b, c, d)) {
+                /* console.log(winningConditions, 'before'); */
+                winningConditions.splice(i, 1)
+                totalPosibilities--
+                /* console.log(winningConditions, 'after'); */
+
+                if(winningConditions < 1) {
+                    console.log('EMPATE');
+                    announce(TIE);
+                    isGameActive = false;
+                }
+            }
+
+            //checking for empty positions
             if (a === '' || b === '' || c === '' || d === '') {
                 continue;
             }
+            //checking for winner
             if (a === b && b === c && c === d) {
+
                 roundWon = true;
                 break;
             }
@@ -97,9 +155,7 @@ function runGame(boardSize) {
             return;
         }
 
-    if (!board.includes(''))
-        announce(TIE);
-    }
+}
 
     const announce = (type) => {
         switch(type){
@@ -140,7 +196,7 @@ function runGame(boardSize) {
             tile.classList.add(`player${currentPlayer}`);
             updateBoard(index);
             //sending board Size as a parameter
-            handleResultValidation(boardSize);
+            handleResultValidation();
             changePlayer();
         }
     }
@@ -153,6 +209,7 @@ function runGame(boardSize) {
         }
 
         isGameActive = true;
+        setWinningPosibilities()
         announcer.classList.add('hide');
 
         if (currentPlayer === 'O') {
@@ -181,7 +238,6 @@ export {
     setCurrentBoard, 
     populateBoard, 
     winningConditions, 
-    totalPosibilities, 
     setWinningConditions,
     setTotalPosibilities
 }

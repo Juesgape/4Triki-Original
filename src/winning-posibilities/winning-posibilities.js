@@ -1,5 +1,4 @@
 import { currentBoard } from "../index.js"
-import { totalPosibilities } from "../index.js";
 import { setWinningConditions } from "../index.js";
 import { setTotalPosibilities } from "../index.js";
 
