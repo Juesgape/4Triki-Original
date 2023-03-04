@@ -11,7 +11,7 @@
 }
 
 .main-screen-title h1 {
-    padding-top: 280px;
+    padding-top: 30px;
     color: white;
 }
 .buttons-container {
@@ -19,6 +19,20 @@
     display: flex;
     justify-content: center;
     gap: 4rem;
+}
+
+.tictactoe-image{
+    width: 100%;
+    height: 100px;
+    padding-top: 130px;
+    display: grid;
+    place-items: center;
+}
+
+.tictactoe-image img{
+    width: 100px;
+    height: 100%;
+    
 }
 
 .buttons-container button{
@@ -30,7 +44,7 @@
     border-color: white;
     box-shadow: 2px 4px #5e548e;
     
-    --s: 100px;   /* the size of the image */
+    --s: 87px;   /* the size of the image */
     --b: 4px;     /* the border thickness*/
     --g: 8px;    /* the gap */
     --c: #9f86c0; /* the color */
@@ -52,6 +66,78 @@
 
 #btn-4x4{
     box-shadow: 2px 4px#5e548e;
+}
+
+.social-media-button{
+    width: 100%;
+    display: grid;
+    height: 100px;
+    place-items: center;
+    position: fixed;
+    bottom: 20px;
+    
+}
+
+.tooltip{
+    position: relative;
+    cursor: pointer;
+    border-bottom: 2px dotted white;
+    padding: 5px;
+}
+
+.information-by-label{
+    height: 50px;
+    width: 160px;
+    background-color: black;
+    align-items: center;
+    border-radius: 30px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    border-radius: 7px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    padding: 10px 15px;
+    transition: opacity 0.5s ease;
+}
+
+.information-by-label::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top:100%;
+    transform: translateX(-50%);
+}
+
+.tooltip:hover .information-by-label{
+    top: -130%;
+    visibility: visible;
+    opacity: 1;
+}
+.fa::before{
+    font-size: 20px;
+}
+.fa {
+    padding-top: 10px;
+    z-index: 1;
+    height: 20px;
+    padding-top: 20px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+
+.creators-label-box{
+    width: 100%;
+    text-align: center;
+}
+
+.creators-label-box label{
+    color: white;
 }
 
 @media(min-width:1080px){
