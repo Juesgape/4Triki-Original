@@ -169,7 +169,7 @@ function runGame(boardSize) {
                 playerO_points+=1;
                 last_winner="O"}
                 else{
-                    playerO_points*=2
+                    playerO_points*=3
                     last_winner=""
                 }
                 console.log("Player O points:"+playerO_points);
