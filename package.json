@@ -1,0 +1,21 @@
+{
+  "name": "4triki",
+  "version": "1.0.0",
+  "description": "A Tic tac toe but in a bigger board",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Tic",
+    "tac",
+    "toe",
+    "Javascript",
+    "HTML",
+    "CSS",
+    "game"
+  ],
+  "author": "Juesgape, Phol and Neithan",
+  "license": "MIT",
+  "type": "module"
+}
