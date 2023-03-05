@@ -1,12 +1,16 @@
 import { setWinningPosibilities } from "./winning-posibilities/winning-posibilities.js"
 
+import { mainScreen } from "./main-screen/main-screen.js"
+import { mainGame } from "./main-screen/main-screen.js"
+import { loader } from "./main-screen/main-screen.js"
+
 //setting the board size
-let currentBoard
+let currentBoard = 0
 let container = document.querySelector('.container')
 
 //total posibilities
-let winningConditions
-let totalPosibilities
+let winningConditions = []
+let totalPosibilities = 0
 
 //This function sets a new value for the current board
 function setCurrentBoard(newValue) {
@@ -70,7 +74,10 @@ function checkForTie(a, b, c, d) {
 }
 
 //function to populate the board with the user's input
-function populateBoard(size) {
+function populateBoard(size, ) {
+    //Empty the container with all his nodeChilds
+    container.innerHTML = ''
+
     for(let i = 0; i < size * size; i++) {
         const tile = document.createElement('div')
         tile.classList.add('tile')
@@ -95,6 +102,7 @@ function runGame(boardSize) {
     const playerDisplay = document.querySelector('.display-player');
     const resetButton = document.querySelector('#reset');
     const announcer = document.querySelector('.announcer');
+    const goBackToMenu = document.querySelector('#btn-goBackToMenu')
 
     //for loop to generate the board with the size that the user chose
     let board = [];
@@ -248,6 +256,21 @@ function runGame(boardSize) {
     });
 
     resetButton.addEventListener('click', resetBoard);
+
+    goBackToMenu.addEventListener('click', () => {
+
+        //adding animation
+        setTimeout(() => {
+            mainScreen.classList.remove('hide')
+            loader.classList.add('hide')
+            mainScreen.classList.remove('animation')
+        }, 1000)
+
+        loader.classList.remove('hide')
+        mainGame.classList.add('hide')
+
+        resetBoard()
+    })
 }
 
 

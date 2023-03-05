@@ -37,6 +37,11 @@
     display: none;
 }
 
+.animation {
+    transition: .3s ease-in-out;
+    transition-delay: 3s 5s;
+}
+
 .container {
     margin: 0 auto;
     display: grid;

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="./main-screen/main-screen.css">
     <link rel="shortcut icon" href="./main-screen-img/Triki logo.png" type="image/x-icon">
+    <!-- importing animations -->
+    <link rel="stylesheet" href="./animations/loading-main-screen.css">
     <!-- Importing font size -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
@@ -18,6 +20,27 @@
     <title>Triki X</title>
 </head>
 <body>
+
+    <!-- Loading visaje -->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        </div>
+    </div>
 
     <!-- Welcome screen -->
 
@@ -75,7 +98,7 @@
             <button id="reset">Reset</button>
         </section>
         <section class ="back">
-            <button onClick="window.location.reload();">Back to menu</button>
+            <button id="btn-goBackToMenu">Back to menu</button>
         </section>
         <section class="display">
             Player <span class="display-player playerX">X</span>'s turn
