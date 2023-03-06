@@ -31,7 +31,7 @@
     font-size: 25px;
     text-align: center;
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .announcer-container {
@@ -99,12 +99,10 @@
 }
 
 /* Reset button position */
-
-.controls {
-    position: absolute;
-    margin-top: 10px;
-    margin-left: 0px;
-    z-index: 1;
+.buttons-container-main-gameScreen {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5rem 0 1.5rem 0;
 }
 
 /*Reset - Hover animation*/
@@ -113,7 +111,6 @@
     padding: 8px;
     border: none;
     font-size: 20px;
-    margin-left: 5em;
     cursor: pointer;
     height: 70px;
     width: 70px;
@@ -142,11 +139,7 @@
 
 /*Back to menu button position*/
 .back{
-    display: flex;
-    justify-content: right;
-    margin-top: 10px;
-    margin-right: 50px;
-    position: relative;
+    
 }
 
 /*Back to menu - Hover animation*/
@@ -212,7 +205,7 @@
     font-size: 2em;
 }
 
-@media(min-width:700px){
+@media(min-width:1246px){
     .container {
         width: 300px;
         max-height: 300px;
@@ -222,6 +215,6 @@
         min-height: 70px;
     }
     .title { 
-        font-size: 40px;
+        font-size: 30px;
     }
 }
