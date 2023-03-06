@@ -1,3 +1,4 @@
+/*Background and preparing site to all*/
 .main-screen{
     background-color: #231942;
 }
@@ -6,33 +7,23 @@
     align-items: center;
     height: 100vh;
 }
+
 .main-screen-title {
     text-align: center;
 }
 
+/*Title*/
 .main-screen-title h1 {
     padding-top: 30px;
     color: white;
 }
+
+/*Buttons design*/
 .buttons-container {
     padding-top: 2rem;
     display: flex;
     justify-content: center;
     gap: 4rem;
-}
-
-.tictactoe-image{
-    width: 100%;
-    height: 100px;
-    padding-top: 130px;
-    display: grid;
-    place-items: center;
-}
-
-.tictactoe-image img{
-    width: 100px;
-    height: 100%;
-    
 }
 
 .buttons-container button{
@@ -68,6 +59,21 @@
     box-shadow: 2px 4px#5e548e;
 }
 
+/*Image side setted*/
+.tictactoe-image{
+    width: 100%;
+    height: 100px;
+    padding-top: 130px;
+    display: grid;
+    place-items: center;
+}
+
+.tictactoe-image img{
+    width: 100px;
+    height: 100%;
+    
+}
+
 .social-media-button{
     width: 100%;
     display: grid;
@@ -75,22 +81,26 @@
     place-items: center;
     position: fixed;
     bottom: 20px;
-    
 }
+/*Creators social-media*/
 
+/*Tooltip to creators photos*/
 .tooltip{
     position: relative;
     cursor: pointer;
     border-bottom: 2px dotted white;
     padding: 5px;
+    border-radius: 10px;
 }
 
 .information-by-label{
+    display: flex;
+    flex-direction: row;
     height: 50px;
-    width: 160px;
-    background-color: black;
-    align-items: center;
-    border-radius: 30px;
+    width: 180px;
+    border: white 2px solid;
+    background: rgb(125,7,161);
+    background: linear-gradient(90deg, rgba(125,7,161,1) 17%, rgba(162,6,173,1) 52%, rgba(0,212,255,1) 100%);    border-radius: 200px;
     position: absolute;
     left: 50%;
     top: 0;
@@ -101,6 +111,17 @@
     opacity: 0;
     padding: 10px 15px;
     transition: opacity 0.5s ease;
+    gap: 26px;
+}
+
+.information-by-label img{
+    width: 40px;
+    border-radius: 20px;
+    border: white 2px solid;
+}
+
+.information-by-label img:hover{
+    border: black 1px solid;
 }
 
 .information-by-label::before{
@@ -111,25 +132,12 @@
     transform: translateX(-50%);
 }
 
+
 .tooltip:hover .information-by-label{
     top: -130%;
     visibility: visible;
     opacity: 1;
 }
-.fa::before{
-    font-size: 20px;
-}
-.fa {
-    padding-top: 10px;
-    z-index: 1;
-    height: 20px;
-    padding-top: 20px;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-}
-
 
 .creators-label-box{
     width: 100%;
@@ -138,6 +146,71 @@
 
 .creators-label-box label{
     color: white;
+}
+
+/*Tooltip to creators social-media one by one*/
+
+.social{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: 25%;
+    justify-content: center;
+    color: white;
+    border: #6A116A 6px solid;
+    background-color: #901490;
+    border-radius:40px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    position: absolute;
+    top: 0;
+    transform: translateY(-20%);
+    border-radius: 7px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    padding: 10px 15px;
+    transition: opacity 0.5s ease;
+}
+
+.social::before{
+    content: "";
+    position: absolute;
+    top:100%;
+}
+
+.juesgape:hover .social{
+    top: -130%;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(10%);
+    transform: translateY(-20%);
+}
+
+.neithan:hover .social{
+    top: -130%;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(10%);
+    transform: translateY(-20%);
+}
+
+.phol:hover .social{
+    top: -130%;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-20%);
+}
+
+.fa{
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.fa:hover{
+    transform: scale(1.5); /* Aumentar tamaño del botón al 120% */
+    transition: transform 0.2s ease-in-out; /* Duración y estilo de la transición */
 }
 
 @media(min-width:1080px){

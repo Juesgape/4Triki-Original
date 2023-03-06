@@ -1,10 +1,11 @@
+/*Background and preparing site to all*/
 #main-game{
-    padding-top: 30px;
+    padding-top: 10px;
     display:column;
 }
 
 #main-game .display{
-    margin-top: 40px;
+    margin-top: 0px;
 
 }
 
@@ -42,6 +43,8 @@
     transition-delay: 3s 5s;
 }
 
+/*Boxes setting (tictactoe spaces to play)*/
+
 .container {
     margin: 0 auto;
     display: grid;
@@ -68,7 +71,7 @@
 }
 
 .playerX {
-    color: #09C372;
+    color: red;
     text-align: center;
 }
 
@@ -77,12 +80,16 @@
     text-align: center;
 }
 
+/* Reset button position */
+
 .controls {
     position: absolute;
-    margin-left: 280px;
-    margin-top: 250px;
+    margin-top: 10px;
+    margin-left: 0px;
+    z-index: 1;
 }
 
+/*Reset - Hover animation*/
 .controls button {
     color: white;
     padding: 8px;
@@ -115,11 +122,16 @@
     outline-offset: var(--g);
   }
 
+/*Back to menu button position*/
 .back{
     display: flex;
-    position: absolute;
-    margin-left: 2rem;
+    justify-content: right;
+    margin-top: 10px;
+    margin-right: 50px;
+    position: relative;
 }
+
+/*Back to menu - Hover animation*/
 .back button{
     border-radius: 10px;
     border-radius: 20px;
@@ -127,7 +139,7 @@
     background-color: #0EFFF8;
     cursor: pointer;
     height: 70px;
-    width: 90px;
+    width: 70px;
     
     --s: 70px;   /* the size of the image */
     --b: 3px;     /* the border thickness*/
@@ -147,6 +159,41 @@
     outline-offset: var(--g);
 }
 
+/* Scoreboard style */
+
+.scoreboard{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 300px;
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    margin-left: 40px;
+}
+
+.scoreboard-name, .scoreboard-score{
+    padding: 10px;
+    text-align: center;
+}
+
+.scoreboard-name{
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    font-size: 20px;
+}
+
+.scoreboard-name--one{
+    color: red;
+}
+
+.scoreboard-name--two{
+    color: blue;
+}
+
+.scoreboard-score{
+    font-size: 2em;
+}
+
 @media(min-width:700px){
     .container {
         width: 300px;
@@ -158,26 +205,5 @@
     }
     .title { 
         font-size: 40px;
-    }
-}
-
-@media(max-width:1340px){
-
-    .controls {
-        margin-top: 10px;
-        margin-left: 0px;
-        z-index: 1;
-    }
-    
-    .back{
-        justify-content: right;
-        margin-top: 10px;
-        margin-right: 50px;
-        position: relative;
-    }
-    
-    .back button{
-        height: 70px;
-        width: 70px;
     }
 }

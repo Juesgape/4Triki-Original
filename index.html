@@ -54,7 +54,7 @@
                 <h1>Selecciona el tamaño del tablero</h1>
             </div>
     
-            <div class="buttons-container">
+            <div class="buttons-container"> <!-- Joiners to game buttons-->
     
                 <div class="button">
                     <button id="btn-4x4">4x4</button>
@@ -68,20 +68,43 @@
                     <button id="btn-6x6">6x6</button>
                 </div>
             </div>
+            
             <div class="social-media-button">
-                <div class="tooltip">
-                <div class= "information-by-label">
-                    <a href="#" id="facebook-opener" onclick="
-                    window.open('https://web.facebook.com/DarkEnesito/?_rdc=2&_rdr');
-                    window.open('https://web.facebook.com/profile.php?id=100075069035273');
-                    window.open('https://web.facebook.com/pholcasta');" 
-                    class="fa fa-facebook media-button"></a>
-                    <a href="#" id ="twitter-opener" onclick="openMultipleFacebookLinks(twitterLinks)" class="fa fa-twitter media-button"></a>
-                    <a href="#" id= "instagram-opener" onclick="openMultipleFacebookLinks(instagramLinks)" class="fa fa-instagram media-button"></a>
-                </div>
-                <div class="creators-label-box">
-                    <label>Creators</label>
-                </div>
+
+                <div class="tooltip"> <!-- Creators images tooltip -->
+                    <div class= "information-by-label">
+                        <div class="juesgape">  <!-- Juesgape info -->
+                            <div class="social"> 
+                                <p>Juesgape</p>
+                                <a target="_blank"href="https://github.com/Juesgape" class="fa fa-github fa-2x"></a>
+                                <a target="_blank"href="https://www.instagram.com/grape_jus/" class="fa fa-instagram media-button fa-2x"></a>
+                                <a target="_blank"href="acebook.com/profile.php?id=100075069035273" class="fa fa-facebook media-button fa-2x"></a>
+                            </div>
+                            <img src="src/main-screen-img/juesgape-icon.jfif" alt="">
+                        </div>
+                        <div class="neithan"> <!-- Neithan info -->
+                            <div class="social">
+                                <p>Enedev</p>
+                                <a target="_blank" href="https://github.com/Enedev" class="fa fa-github fa-2x"></a>
+                                <a target="_blank" href="https://www.instagram.com/__en3_/" class="fa fa-instagram media-button fa-2x"></a>
+                                <a target="_blank" href="https://www.facebook.com/DarkEnesito" class="fa fa-facebook media-button fa-2x"></a>
+                            </div>
+                            <img src="src/main-screen-img/neithan-icon.jfif" class="icon-profile" alt="">
+                        </div>
+                        <div class="phol">  <!-- Phol info -->
+                            <div class="social"> 
+                                <p>PholCast</p>
+                                <a target="_blank" href="https://github.com/PholCast" class="fa fa-github fa-2x"></a>
+                                <a target="_blank" href="https://www.instagram.com/pholcast/" class="fa fa-instagram media-button fa-2x"></a>
+                                <a target="_blank" href="https://www.facebook.com/pholcasta" class="fa fa-facebook media-button fa-2x"></a>
+                            </div>
+                            <img src="src/main-screen-img/phol-icon.jpg" class="icon-profile" alt="">
+                        </div>
+                        <a href=""></a>
+                    </div>
+                    <div class="creators-label-box">
+                        <label>Creators</label>
+                    </div>
                 </div>
                 
             </div>
@@ -108,8 +131,13 @@
         </section>
         
         <section class="display announcer hide"></section>
-        
-        
+
+        <div class="scoreboard">
+            <div class="scoreboard-name scoreboard-name--one">Player One</div>
+            <div class="scoreboard-name scoreboard-name--two">Player Two</div>
+            <div class="scoreboard-score">0</div>
+            <div class="scoreboard-score">0</div>
+        </div>
     </main>
 
     <script type="module" src="./src/main-screen/main-screen.js"></script>
