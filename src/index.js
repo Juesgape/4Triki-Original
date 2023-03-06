@@ -104,6 +104,8 @@ function runGame(boardSize) {
     const announcer = document.querySelector('.announcer');
     const announcerContainer = document.querySelector('.announcer-container')
     const goBackToMenu = document.querySelector('#btn-goBackToMenu')
+    const player1Score = document.querySelector('#player1')
+    const player2Score = document.querySelector('#player2')
 
     //for loop to generate the board with the size that the user chose
     let board = [];
@@ -206,9 +208,13 @@ function runGame(boardSize) {
                 //conditional that Phol implemented but within a switch, like, who does that?
                 if (last_winner!="O") {
                 playerO_points+=1;
+                //displaying score
+                player2Score.innerText = playerO_points
                 last_winner="O"
             } else{
                     playerO_points*=3
+                    //displaying score
+                    player2Score.innerText = playerO_points
                     last_winner=""
                 }
                 console.log("Player O points:"+playerO_points);
@@ -218,9 +224,13 @@ function runGame(boardSize) {
                 //conditional that Phol implemented but within a switch, like, who does that?
                 if (last_winner!="X") {
                     playerX_points+=1;
+                    //displaying score
+                    player1Score.innerText = playerX_points
                     last_winner="X"
                 } else {
                         playerX_points*=3
+                        //displaying score
+                        player1Score.innerText = playerX_points
                         last_winner=""
                     }
                 console.log("Player X points:"+playerX_points);
@@ -281,6 +291,9 @@ function runGame(boardSize) {
         mainGame.classList.add('hide')
 
         resetBoard()
+
+        player2Score.innerText = '0'
+        player1Score.innerText = '0'
     })
 }
 
