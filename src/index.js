@@ -126,6 +126,7 @@ function runGame(boardSize) {
     setWinningPosibilities()
     
     function handleResultValidation() {
+        console.log('---------------------------');
         let roundWon = false;
         for (let i = 0; i < totalPosibilities; i++) {
             const winCondition = winningConditions[i];
@@ -134,30 +135,33 @@ function runGame(boardSize) {
             const c = board[winCondition[2]];
             const d = board[winCondition[3]];
 
+
             //checking for a tie
             if(checkForTie(a, b, c, d)) {
-                /* console.log(winningConditions, 'before'); */
                 winningConditions.splice(i, 1)
+                console.log(winningConditions);
                 totalPosibilities--
-                /* console.log(winningConditions, 'after'); */
 
-                if(winningConditions < 1) {
+                if(winningConditions.length < 1) {
                     console.log('EMPATE');
                     announce(TIE);
                     isGameActive = false;
                 }
+                continue
             }
 
             //checking for empty positions
             if (a === '' || b === '' || c === '' || d === '') {
                 continue;
             }
+
             //checking for winner
             if (a === b && b === c && c === d) {
 
                 roundWon = true;
                 break;
             }
+
         }
 
     if (roundWon) {
