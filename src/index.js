@@ -102,6 +102,7 @@ function runGame(boardSize) {
     const playerDisplay = document.querySelector('.display-player');
     const resetButton = document.querySelector('#reset');
     const announcer = document.querySelector('.announcer');
+    const announcerContainer = document.querySelector('.announcer-container')
     const goBackToMenu = document.querySelector('#btn-goBackToMenu')
 
     //for loop to generate the board with the size that the user chose
@@ -164,6 +165,35 @@ function runGame(boardSize) {
         }
 
 }
+    const resetBoard = () => {
+        //Making the board go blank
+        board = []
+        for(let i = 0; i <= boardSize; i++) {
+            board.push('')
+        }
+
+        isGameActive = true;
+        setWinningPosibilities()
+        announcerContainer.classList.add('hide');
+
+        if (currentPlayer === 'O') {
+            changePlayer();
+        }
+
+        tiles.forEach(tile => {
+            tile.innerText = '';
+            tile.classList.remove('playerX');
+            tile.classList.remove('playerO');
+        });
+
+        //animation 
+        announcer.classList.remove('announcer-styles');
+    }
+
+    tiles.forEach( (tile, index) => {
+        tile.addEventListener('click', () => userAction(tile, index));
+    });
+
     let playerX_points=0;
     let playerO_points=0;
     let last_winner="";
@@ -173,10 +203,11 @@ function runGame(boardSize) {
         switch(type){
             case PLAYERO_WON:
                 announcer.innerHTML = 'Player <span class="playerO">O</span> Won';
-                if (last_winner!="O"){
+                //conditional that Phol implemented but within a switch, like, who does that?
+                if (last_winner!="O") {
                 playerO_points+=1;
-                last_winner="O"}
-                else{
+                last_winner="O"
+            } else{
                     playerO_points*=3
                     last_winner=""
                 }
@@ -184,10 +215,11 @@ function runGame(boardSize) {
                 break;
             case PLAYERX_WON:
                 announcer.innerHTML = 'Player <span class="playerX">X</span> Won';
-                if (last_winner!="X"){
+                //conditional that Phol implemented but within a switch, like, who does that?
+                if (last_winner!="X") {
                     playerX_points+=1;
-                    last_winner="X"}
-                    else{
+                    last_winner="X"
+                } else {
                         playerX_points*=3
                         last_winner=""
                     }
@@ -196,7 +228,13 @@ function runGame(boardSize) {
             case TIE:
                 announcer.innerText = 'Tie';
         }
-        announcer.classList.remove('hide');
+        announcerContainer.classList.remove('hide');
+        announcer.classList.add('announcer-styles');
+        setTimeout(() => {
+            announcerContainer.classList.add('hide');
+            announcer.classList.remove('announcer-styles')
+            resetBoard()
+        }, 1000)
     };
 
     const isValidAction = (tile) => {
@@ -228,32 +266,6 @@ function runGame(boardSize) {
             changePlayer();
         }
     }
-    
-    const resetBoard = () => {
-        //Making the board go blank
-        board = []
-        for(let i = 0; i <= boardSize; i++) {
-            board.push('')
-        }
-
-        isGameActive = true;
-        setWinningPosibilities()
-        announcer.classList.add('hide');
-
-        if (currentPlayer === 'O') {
-            changePlayer();
-        }
-
-        tiles.forEach(tile => {
-            tile.innerText = '';
-            tile.classList.remove('playerX');
-            tile.classList.remove('playerO');
-        });
-    }
-
-    tiles.forEach( (tile, index) => {
-        tile.addEventListener('click', () => userAction(tile, index));
-    });
 
     resetButton.addEventListener('click', resetBoard);
 
@@ -263,7 +275,6 @@ function runGame(boardSize) {
         setTimeout(() => {
             mainScreen.classList.remove('hide')
             loader.classList.add('hide')
-            mainScreen.classList.remove('animation')
         }, 1000)
 
         loader.classList.remove('hide')
