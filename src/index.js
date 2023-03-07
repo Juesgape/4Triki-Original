@@ -25,54 +25,6 @@ function setTotalPosibilities(value) {
     totalPosibilities = value
 }
 
-//Check for tie and returns a truthy value
-function checkForTie(a, b, c, d) {
-    if(a !== '') {
-        if(b !== '' && b !== a) {
-            return true
-        }
-        if(c !== '' && c !== a) {
-            return true
-        }
-        if(d !== '' && d !== a) {
-            return true
-        }
-    }
-    if(b !== '') {
-        if(a !== '' && a !== b) {
-            return true
-        }
-        if(c !== '' && c !== b) {
-            return true
-        }
-        if(d !== '' && d !== b) {
-            return true
-        }
-    }
-    if(c !== '') {
-        if(a !== '' && a !== c) {
-            return true
-        }
-        if(b !== '' && b !== c) {
-            return true
-        }
-        if(d !== '' && d !== c) {
-            return true
-        }
-    }
-    if(d !== '') {
-        if(a !== '' && a !== d) {
-            return true
-        }
-        if(b !== '' && b !== d) {
-            return true
-        }
-        if(c !== '' && c !== d) {
-            return true
-        }
-    }
-}
-
 //function to populate the board with the user's input
 function populateBoard(size, ) {
     //Empty the container with all his nodeChilds
@@ -107,10 +59,13 @@ function runGame(boardSize) {
     const player1Score = document.querySelector('#player1')
     const player2Score = document.querySelector('#player2')
 
+    //Correcting bugs
+    let counter = 0
+
     //for loop to generate the board with the size that the user chose
     let board = [];
 
-    for(let i = 0; i <= boardSize; i++) {
+    for(let i = 0; i < boardSize; i++) {
         board.push('')
     }
 
@@ -126,8 +81,9 @@ function runGame(boardSize) {
     setWinningPosibilities()
     
     function handleResultValidation() {
-        console.log('---------------------------');
         let roundWon = false;
+        let control = false;
+        console.log('New set-----------------');
         for (let i = 0; i < totalPosibilities; i++) {
             const winCondition = winningConditions[i];
             const a = board[winCondition[0]];
@@ -135,32 +91,45 @@ function runGame(boardSize) {
             const c = board[winCondition[2]];
             const d = board[winCondition[3]];
 
+            /* console.log({a, b, c, d, i}); */
 
-            //checking for a tie
-            if(checkForTie(a, b, c, d)) {
-                winningConditions.splice(i, 1)
-                console.log(winningConditions);
-                totalPosibilities--
+            //checking for winner
+            if (a === b && b === c && c === d) {
+                if(a !== '' && b !== '' && c !== '' && d !== '') {
+                    console.log(`La combinación ganadora fue ${winCondition}`);
+                    roundWon = true;
+                    break;
+                } else {
+                    continue
+                }
+            }
 
-                if(winningConditions.length < 1) {
+            //Checking for tie
+            function checkForTie() {
+                counter = 0
+                for(let j = 0; j < winningConditions.length; j ++) {
+                    const winCondition = winningConditions[j];
+                    const a = board[winCondition[0]];
+                    const b = board[winCondition[1]];
+                    const c = board[winCondition[2]];
+                    const d = board[winCondition[3]];
+
+                    let arrCompare = new Set([a, b, c, d])
+
+                    if(arrCompare.has('X') && arrCompare.has('O')) {
+                        counter += 1
+                        console.log(counter);
+                        console.log(winningConditions.length);
+                    }
+                }
+                if(counter === winningConditions.length) {
                     console.log('EMPATE');
                     announce(TIE);
                     isGameActive = false;
                 }
-                continue
             }
 
-            //checking for empty positions
-            if (a === '' || b === '' || c === '' || d === '') {
-                continue;
-            }
-
-            //checking for winner
-            if (a === b && b === c && c === d) {
-
-                roundWon = true;
-                break;
-            }
+            checkForTie()
 
         }
 
@@ -174,7 +143,7 @@ function runGame(boardSize) {
     const resetBoard = () => {
         //Making the board go blank
         board = []
-        for(let i = 0; i <= boardSize; i++) {
+        for(let i = 0; i < boardSize; i++) {
             board.push('')
         }
 

@@ -137,11 +137,6 @@
     outline-offset: var(--g);
   }
 
-/*Back to menu button position*/
-.back{
-    
-}
-
 /*Back to menu - Hover animation*/
 .back button{
     border-radius: 10px;
